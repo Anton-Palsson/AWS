@@ -2,6 +2,8 @@
 
 Detta projekt övervakar temperatur och luftfuktighet med hjälp av en ESP32-enhet. Systemet använder AWS-tjänster för att hantera datainsamling, bearbetning, lagring och aviseringar. Användargränssnittet tillhandahålls via en React-frontend byggd med AWS Amplify.
 
+Use Case: Att från mitt hem mäta inhomhustemperaturen och fuktigheten, spara detta i Dynamo för att sedan kunna skicka det till telegram för att få en notis så att jag även när jag inte är hemma kan ta reda på temp/hum samt få en överblick på datan i en Amplify frontend. 
+
 ---
 
 ## Arkitekturöversikt
@@ -23,7 +25,7 @@ Detta projekt övervakar temperatur och luftfuktighet med hjälp av en ESP32-enh
    - Lagrar telemetridata för sökningar och analys.
 
 5. **S3 Bucket**:
-   - Lagrar bearbetad eller aggregerad data för arkivering eller vidare analys.
+   - Lagrar bearbetad eller aggregerad data för arkivering eller vidare analys. Behövs nödväntigvis 
 
 6. **Amplify React-frontend**:
    - Hämtar data via ett HTTP GET API som körs på AWS Lambda.
