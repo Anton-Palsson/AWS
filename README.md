@@ -5,7 +5,7 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
 ---
 
 ## Arkitekturöversikt
-![Systemarkitektur](pictures/AWS Architecture.png)
+![Systemarkitektur](pictures/AWSArchitecture.png)
 
 
 ### Komponenter och Funktioner
