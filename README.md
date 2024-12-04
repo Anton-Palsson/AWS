@@ -96,6 +96,7 @@ Lösningen är designad för att möta behovet av säker och pålitlig övervakn
 
 4. **Integrering med externa system**:
    - Export av data till externa verktyg som Power BI eller Google Sheets för ytterligare analys och rapportering.
+   - Implementation av externa API, tex SMHI för att jämnföra klimat data inom/utomhus.
 
 ---
 
