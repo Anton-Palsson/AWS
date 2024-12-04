@@ -14,6 +14,7 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
    - Insamling av temperatur- och luftfuktighetsdata från omgivningen.
    - Kommunikation med AWS IoT Core via MQTT för säker och tillförlitlig dataöverföring.
      ![Systemarkitektur](Pictures/ESP32%20DHT%20Breadboard.png)
+     ![Systemarkitektur](arduino.png)
 
 2. **AWS IoT Core**:
    - Central hubb för att hantera datainsamling från flera IoT-enheter.
