@@ -75,41 +75,42 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
 
 ---
 
-## Användarcentrerad Design
+## Use Case
 
-Lösningen har designats för att möta användarnas behov av säker och pålitlig övervakning:
+Lösningen är designad för att möta behovet av säker och pålitlig övervakning av lägenhetens temperatur och luftfuktighet:
 
-- **Utgångspunkt i behov och verksamhet**:
-   - Fokus ligger på att ge användaren realtidsdata och historiska analyser för att kunna agera på temperatur- eller fuktighetsavvikelser.
-   - Telegram-notifieringar möjliggör snabb respons, oavsett var användaren befinner sig.
+- **Utgångspunkt i behov och användning**:
+   - Systemet levererar realtidsdata och historiska analyser för att ge en tydlig överblick över inomhusklimatet.
+   - Telegram-notifieringar skickas regelbundet för att hålla användaren uppdaterad med aktuell temperatur och fuktighet, oavsett var hen befinner sig.
 
 - **Skalbar och säker infrastruktur**:
-   - Lösningen kan enkelt byggas ut för att stödja flera sensorer eller fler användare.
-   - Säkerhet är integrerad i alla nivåer, från enhetskommunikation till användaråtkomst.
+   - Lösningen är framtidssäker och kan enkelt skalas för att inkludera fler sensorer och användare.
+   - Säkerhet är en kärnfunktion och tillämpas genom krypterad kommunikation, certifikathantering och rollbaserad åtkomstkontroll genom AWS.
 
 - **Flexibel datavisualisering**:
-   - Historisk data kan analyseras för att upptäcka trender, medan realtidsdata ger omedelbar insikt i aktuella förhållanden.
-   - Kombinationen av DynamoDB för snabb dataåtkomst och S3 för långsiktig lagring möjliggör olika analysmetoder.
+   - Realtidsdata ger direkt insikt i aktuella förhållanden, medan historiska data kan användas för att identifiera trender över tid.
+   - DynamoDB möjliggör snabb dataåtkomst för analyser, medan S3 används för kostnadseffektiv lagring av stora datamängder och aggregerad analys.
 
 ---
 
 ## Framtida Utvecklingsmöjligheter
 
 1. **Prediktiv analys med maskininlärning**:
-   - Med AWS SageMaker kan lösningen använda historisk data för att förutse trender och avvikelser.
+   - Historisk data kan analyseras med AWS SageMaker för att förutse trender eller mönster i temperatur och luftfuktighet.
 
 2. **Utökning till fler enheter**:
-   - Skalbarheten i AWS IoT Core och DynamoDB gör det möjligt att integrera fler sensorer och datatyper, till exempel CO2- eller ljusnivåmätare.
+   - Lösningen kan skalas för att inkludera fler sensorer och datatyper, exempelvis CO2-nivåer eller ljusmätningar.
 
 3. **Avancerade notifieringar**:
-   - Användare kan få möjlighet att definiera egna notifieringsgränser och välja hur de vill bli informerade.
+   - Möjligheten att anpassa notifieringar baserat på specifika gränsvärden och preferenser för varje användare.
 
 4. **Integrering med externa system**:
-   - Export av data till verktyg som Power BI eller Google Sheets kan ge ytterligare analysmöjligheter.
+   - Export av data till externa verktyg som Power BI eller Google Sheets för ytterligare analys och rapportering.
 
 ---
 
 ## Sammanfattning
 
-Detta projekt kombinerar säkerhet, skalbarhet och användarvänlighet för att skapa en robust IoT-lösning som möter både tekniska och praktiska krav. Med stöd för framtida expansion och avancerade analysmöjligheter är lösningen väl lämpad för att tillgodose både dagens och morgondagens behov.
+Projektet kombinerar säkerhet, skalbarhet och användarvänlighet för att skapa en tillförlitlig IoT-lösning. Med regelbundna Telegram-notifieringar och en skalbar design är systemet väl lämpat för både nuvarande behov och framtida utvecklingsmöjligheter. Denna lösning erbjuder en robust och flexibel plattform för övervakning och analys av inomhusklimat.
+
 
