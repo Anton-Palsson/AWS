@@ -13,6 +13,7 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
 1. **ESP32 med DHT-sensor**:
    - Insamling av temperatur- och luftfuktighetsdata från omgivningen.
    - Kommunikation med AWS IoT Core via MQTT för säker och tillförlitlig dataöverföring.
+     ![Systemarkitektur](Pictures/ESP32%20DHT%20Breadboard.png)
 
 2. **AWS IoT Core**:
    - Central hubb för att hantera datainsamling från flera IoT-enheter.
@@ -20,28 +21,36 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
 
 3. **AWS Rules Engine**:
    - Hanterar och dirigerar dataflöden till olika tjänster baserat på regler.
+     ![Systemarkitektur](Pictures/Rule.png)
 
 4. **DynamoDB**:
    - Lagrar sensordata för snabb åtkomst och sökbarhet.
    - Passar för lösningar som kräver hög tillgänglighet och skalbarhet.
+     ![Systemarkitektur](Pictures/dynamodb.png)
+     
   
 5. **S3 Bucket**:
    - Lagrar rå sensordata för långsiktig lagring och säkerhetskopiering.
    - Idealisk för lösningar som kräver skalbar och kostnadseffektiv lagring av stora datamängder.
+     ![Systemarkitektur](Pictures/s3.png)
 
 6. **AWS Lambda**:
    - Exponerar API:er för frontend och bearbetar inkommande data.
    - Hanterar notifieringar genom integration med Telegram.
+     ![Systemarkitektur](Pictures/lambda.png)
 
 7. **EventBridge**:
-   - Triggar notifieringar baserat på specifika händelser, klockslag eller tröskelvärden.
+   - Triggar lambda baserat på specifika händelser, klockslag eller tröskelvärden.
+     ![Systemarkitektur](Pictures/eventbridge.png)
 
 8. **AWS Amplify med React**:
    - Användargränssnitt för att visa realtids- och historiska data.
    - Flexibel visualisering som stöder både grafer och tabeller.
+     ![Systemarkitektur](Pictures/Frontend.png)
 
 9. **Telegram Bot**:
    - Ger användaren omedelbara notifieringar vid avvikelser, events eller kritiska händelser.
+     ![Systemarkitektur](Pictures/Telegram%20Notis.png)
 
 ---
 
@@ -52,8 +61,8 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
    - Publicerar datan till AWS IoT Core via MQTT, vilket möjliggör säker och stabil överföring även vid nätverksvariationer.
 
 2. **Datalagring och hantering**:
-   - DynamoDB används för att lagra sensordata med snabb åtkomst.
-   - Rådata kan också arkiveras i en S3-bucket för långsiktig lagring och aggregerad analys.
+   - DynamoDB används för att lagra sensordata med snabb åtkomst dvs 'Hot Storage'.
+   - Rådata kan också arkiveras i en S3-bucket för långsiktig lagring och aggregerad analys dvs 'Warm Storage'.
 
 3. **Visualisering och analys**:
    - Frontenden byggd med AWS Amplify och React erbjuder en skalbar lösning för att visa både realtids- och historiska data.
