@@ -8,18 +8,27 @@ Detta projekt syftar till att skapa en robust IoT-lösning för övervakning av 
 Lösningen är designad för att möta behovet av säker och pålitlig övervakning av lägenhetens temperatur och luftfuktighet:
 
 - **Utgångspunkt i behov och användning**:
-   - Systemet levererar realtidsdata och historiska analyser för att ge en tydlig överblick över inomhusklimatet.
+   - Systemet levererar realtidsdata och historiska analyser för att ge en tydlig överblick över inomhusklimatet. Användaren kan snabbt identifiera och agera på förändringar i miljön.
    - Telegram-notifieringar skickas regelbundet för att hålla användaren uppdaterad med aktuell temperatur och fuktighet, oavsett var hen befinner sig.
 
 - **Skalbar och säker infrastruktur**:
-   - Lösningen är framtidssäker och kan enkelt skalas för att inkludera fler sensorer och användare.
-   - Säkerhet är en kärnfunktion och tillämpas genom krypterad kommunikation, certifikathantering och rollbaserad åtkomstkontroll.
+   - Lösningen är framtidssäker och kan enkelt skalas för att inkludera fler sensorer och användare. Systemet är designat för att växa utan att kompromissa med prestanda. Den skalbara arkitekturen gör det möjligt att snabbt lägga till nya enheter och funktioner, vilket gör det lätt att möta växande behov.
+   - **Serverless arkitektur**: Genom att använda serverless lösningar som AWS Lambda kan systemet hantera ökande datamängder och användare utan att kräva konstant serverunderhåll. Den serverlösa arkitekturen gör det möjligt att dynamiskt skala upp eller ner beroende på systemets belastning och användarnas behov.
+   - **DynamoDB**: Erbjuder horisontell skalbarhet, vilket innebär att systemet kan hantera ökande mängder data och användare genom att lägga till fler databasinstanser vid behov. DynamoDB kan effektivt hantera både realtids- och historiska data och säkerställa snabb åtkomst även vid stor belastning.
+   - **S3**: Ger kostnadseffektiv lagring för stora datamängder och stödjer aggregerad analys via externa verktyg. S3:s skalbarhet gör det möjligt att hantera växande datamängder utan att behöva oroa sig för prestandaförluster eller ökade lagringskostnader.
+
+   - Säkerhet är en kärnfunktion och tillämpas genom:
+     - **Krypterad kommunikation**: All data överförs säkert med HTTPS och TLS.
+     - **Certifikathantering**: Automatiserade certifikat säkerställer autentisering mellan enheter och backend.
+     - **Rollbaserad åtkomstkontroll**: Begränsar användarnas åtkomst till relevanta resurser baserat på deras roller.
 
 - **Flexibel datavisualisering**:
-   - Realtidsdata ger direkt insikt i aktuella förhållanden, medan historiska data kan användas för att identifiera trender över tid.
-   - DynamoDB möjliggör snabb dataåtkomst för analyser, medan S3 används för kostnadseffektiv lagring av stora datamängder och aggregerad analys.
+   - Realtidsdata ger direkt insikt i aktuella förhållanden och underlättar snabba beslut och åtgärder.
+   - Historiska data kan användas för att identifiera långsiktiga trender och stödja prediktiva analyser.
+   - **DynamoDB** möjliggör snabb dataåtkomst för analyser i realtid och historiska data.
+   - **S3** används för kostnadseffektiv lagring av stora datamängder och stöder analys via externa verktyg.
 
----
+ ---
 
 ## Arkitekturöversikt
 
